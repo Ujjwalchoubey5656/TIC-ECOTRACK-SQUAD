@@ -43,6 +43,44 @@ factors = {
 ELECTRICITY_CO2 = 0.82
 
 
+#--------------data storage___________#
+data = {
+    "Date": datetime.now().strftime("%Y-%m-%d %H:%M"),
+    "Transport": transport,
+    "Distance": distance,
+    "Electricity": electricity,
+    "Food": food,
+    "CO2": total
+}
+
+df = pd.DataFrame([data])
+
+file = "data.csv"
+
+if os.path.exists(file):
+    df.to_csv(file, mode='a', header=False, index=False)
+else:
+    df.to_csv(file, index=False)
+
+
+#----------------------data fetch backend__________#
+if os.path.exists(file):
+    history = pd.read_csv(file)
+
+
+#___________________analytics backend_______#
+weekly_avg = history["CO2"].tail(7).mean()
+monthly_avg = history["CO2"].tail(30).mean()
+
+transport_group = history.groupby("Transport")["CO2"].mean()
+
+
+
+
+
+   
+
+
 
 
 

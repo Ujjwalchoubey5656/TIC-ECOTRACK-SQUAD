@@ -14,6 +14,17 @@ st.markdown("### Smart Carbon Footprint Tracker")
 # ---------------- SIDEBAR ----------------
 st.sidebar.header("Enter Your Details")
 
+distance = st.sidebar.number_input("🚗 Distance (km)", min_value=0.0, value=5.0)
+
+transport = st.sidebar.selectbox(
+    "Transport",
+    ["Car", "Bike", "Bus", "Train"]
+)
+
+electricity = st.sidebar.number_input("⚡ Electricity Units", min_value=0.0, value=3.0)
+
+food = st.sidebar.selectbox("🍽️ Food Type", ["Veg", "Non-Veg"])
+
 
 
 

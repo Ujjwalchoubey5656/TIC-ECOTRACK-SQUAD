@@ -34,10 +34,12 @@ st.progress(score)
 st.write("### Suggeation")
 if total>10:
     st.warning("Reduce emission ! Use public transport and Saves electrivity.")\
-
+else:
     st.success("Great Job! You are eco-friendly")
     
-
+st.write("### Emission Breakdown")
+st.pyplot(fig)
+goal=st.number_input("Enter your daily CO2 goal(kg)",min_value=1.0,value=5.0)
 
 
 
@@ -122,7 +124,7 @@ transport_group = history.groupby("Transport")["CO2"].mean()
 
 
 
-##ai intergeration
+##AI intergeration
 transport_co2 = distance * factors[transport]
 electricity_co2 = electricity * ELECTRICITY_CO2
 food_co2 = 2 if food == "Veg" else 5

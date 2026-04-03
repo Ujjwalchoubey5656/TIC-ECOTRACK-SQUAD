@@ -25,6 +25,16 @@ electricity = st.sidebar.number_input("⚡ Electricity Units", min_value=0.0, va
 
 food = st.sidebar.selectbox("🍽️ Food Type", ["Veg", "Non-Veg"])
 
+st.subheader("Your Carbon Footprint")
+st.metric("Total Co2 (Kg/Day)",
+          f"{total:.2f}")
+st.subheader(f"Eco Score:{score}/100 {status)")
+st.progress(score)
+
+st.write("### Suggeation")
+if total>10:
+    
+
 
 
 

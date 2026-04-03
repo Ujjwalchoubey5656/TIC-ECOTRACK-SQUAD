@@ -33,7 +33,14 @@ food = st.sidebar.selectbox("🍽️ Food Type", ["Veg", "Non-Veg"])
 
 
 ## Bckened
+factors = {
+    "Car": 0.2,
+    "Bike": 0.1,
+    "Bus": 0.05,
+    "Train": 0.04
+}
 
+ELECTRICITY_CO2 = 0.82
 
 
 

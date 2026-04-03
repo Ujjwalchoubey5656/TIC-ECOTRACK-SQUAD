@@ -33,6 +33,9 @@ st.progress(score)
 
 st.write("### Suggeation")
 if total>10:
+    st.warning("Reduce emission ! Use public transport and Saves electrivity.")\
+
+    st.success("Great Job! You are eco-friendly")
     
 
 

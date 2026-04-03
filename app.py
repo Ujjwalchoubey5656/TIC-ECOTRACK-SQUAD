@@ -1,5 +1,18 @@
 ## frontend
+import streamlit as st
+import pandas as pd
+import matplotlib.pyplot as plt
+from datetime import datetime
+import os
 
+# ---------------- CONFIG ----------------
+st.set_page_config(page_title="EcoTrack AI", page_icon="🌱")
+
+st.title("🌱 EcoTrack AI")
+st.markdown("### Smart Carbon Footprint Tracker")
+
+# ---------------- SIDEBAR ----------------
+st.sidebar.header("Enter Your Details")
 
 
 

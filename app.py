@@ -271,6 +271,13 @@ if menu == "Eco Products":
     - Wildlife ingestion of plastic 🐦  
     - Climate & health improvements
     """)
+# ---------- PROBLEMS ----------
+if menu == "Problems":
+    st.title("⚠️ Carbon Emission Problems & Life Impact")
+    banner("https://images.unsplash.com/photo-1506744038136-46273834b3fb")
+    st.markdown("""
+    Carbon emissions affect every aspect of life. Understanding these problems helps us take action.
+    """)
 
 
 

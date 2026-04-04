@@ -337,9 +337,10 @@ Reducing plastic & chemical usage prevents:
 """)
 # ---------- PROBLEMS ----------
 if menu == "Problems":
-st.title("⚠️ Carbon Emission Problems & Life Impact")
-banner("https://images.unsplash.com/photo-1506744038136-46273834b3fb")
-st.markdown("""
+    
+    st.title("⚠️ Carbon Emission Problems & Life Impact")
+    banner("https://images.unsplash.com/photo-1506744038136-46273834b3fb")
+    st.markdown("""
 Carbon emissions affect every aspect of life. Understanding these problems helps us take action.
 """)
 problems_data = [

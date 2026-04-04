@@ -1,5 +1,5 @@
-from database_sql import create_table, insert_record, fetch_records
-create_table()
+from database_sql
+import create_table, insert_record, fetch_records
 import streamlit as st
 import pandas as pd
 import os
@@ -7,6 +7,7 @@ import requests
 import random
 from streamlit_lottie import st_lottie
 from streamlit_globe import streamlit_globe
+create_table()
 # ---------------- CONFIG ----------------
 st.set_page_config(page_title="EcoTrack AI", layout="wide")
 def load_lottie(url):

@@ -1,4 +1,4 @@
-from database_sql import create_table,
+from database_sql import create_table
 insert_record, fetch_records
 import streamlit as st
 import pandas as pd

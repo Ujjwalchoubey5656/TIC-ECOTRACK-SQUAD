@@ -262,6 +262,14 @@ if menu == "Eco Products":
         with col1: st.error("❌ Plastic")
         with col2: st.success("✅ Steel")
         st.metric("Carbon Saving", "95%")
+ st.markdown("""
+    *Why it matters:*  
+    Reducing plastic & chemical usage prevents:
+    - Pollution of rivers & oceans 🐠  
+    - CO₂ release from manufacturing 🏭  
+    - Wildlife ingestion of plastic 🐦  
+    - Climate & health improvements
+    """)
 
 
 

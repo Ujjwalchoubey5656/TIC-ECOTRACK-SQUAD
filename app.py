@@ -174,6 +174,10 @@ if menu == "Nagar Nigam":
     if st.button("Submit"):
         st.success("Complaint submitted!")
     
+---------- LOCATION ----------
+if menu == "Location":
+    st.title("📍 India Carbon Map & Risks")
+    carbon_problems()
 
 
 

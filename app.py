@@ -193,19 +193,19 @@ st.success("💡 Save electricity")
 
 #--------- NAGAR NIGAM ----------
 if menu == "Nagar Nigam":
-banner("https://images.unsplash.com/photo-1503387762-592deb58ef4e")
-st.title("🏢 Nagar Nigam & Carbon Threats")
-carbon_problems()
-st.success("📞 Contact: +91 9876543210")
-st.success("🚨 Emergency: 112")
-issue = st.text_area("Report Issue")
+    banner("https://images.unsplash.com/photo-1503387762-592deb58ef4e")
+    st.title("🏢 Nagar Nigam & Carbon Threats")
+    carbon_problems()
+    st.success("📞 Contact: +91 9876543210")
+    st.success("🚨 Emergency: 112")
+    issue = st.text_area("Report Issue")
 if st.button("Submit"):
-st.success("Complaint submitted!")
+    st.success("Complaint submitted!")
 
 #---------- LOCATION ----------
 if menu == "Location":
-st.title("📍 India Carbon Map & Risks")
-carbon_problems()
+    st.title("📍 India Carbon Map & Risks")
+    carbon_problems()
 
 data = [
 {"State":"Maharashtra","CO2":18,"lat":19.07,"lon":72.87,"level":"High"},

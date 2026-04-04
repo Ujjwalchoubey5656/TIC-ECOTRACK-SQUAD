@@ -369,6 +369,20 @@ problems_data = [
         {"Category": "Economy", 
          "Impact": "Crop loss, energy costs, disaster damages, healthcare burden"}
     ]
+df_problems = pd.DataFrame(problems_data)
+    st.dataframe(df_problems, use_container_width=True)
+    
+    for row in problems_data:
+        if row["Category"] == "Humans":
+            st.error(f"👤 Humans: {row['Impact']}")
+        elif row["Category"] == "Animals & Birds":
+            st.warning(f"🐦 Wildlife: {row['Impact']}")
+        elif row["Category"] == "Climate":
+            st.info(f"🌡 Climate: {row['Impact']}")
+        elif row["Category"] == "Environment":
+            st.success(f"🌿 Environment: {row['Impact']}")
+        elif row["Category"] == "Economy":
+            st.markdown(f"💰 Economy: {row['Impact']}")
 
 
 

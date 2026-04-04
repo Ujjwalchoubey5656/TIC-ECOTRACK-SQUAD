@@ -212,6 +212,8 @@ data = [
     {"State":"Lakshadweep","CO2":1,"lat":10.57,"lon":72.64,"level":"Very Low"},
     {"State":"Jharkhand","CO2":3,"lat":23.33,"lon":85.33,"level":"Low"}
 ]
+df = pd.DataFrame(data)
+st.map(df.rename(columns={"lat":"latitude","lon":"longitude"}))
 
 
 

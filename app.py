@@ -101,7 +101,7 @@ if st.button("Login"):
             else:
                 st.error("Invalid login")
 
-    st.markdown("</div></div>", unsafe_allow_html=True)
+st.markdown("</div></div>", unsafe_allow_html=True)
 # ---------- HOME AFTER LOGIN ----------
 if "user" in st.session_state and menu == "Login":
     

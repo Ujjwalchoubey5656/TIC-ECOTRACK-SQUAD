@@ -5,7 +5,6 @@ import os
 import requests
 import random
 from streamlit_lottie import st_lottie
-from streamlit_globe import streamlit_globe
 create_table()
 # ---------------- CONFIG ----------------
 st.set_page_config(page_title="EcoTrack AI", layout="wide")
@@ -185,8 +184,6 @@ if menu == "Solution":
     - Flooding & storms 🌊
     - Species extinction 🐦🐘
     """)
-streamlit_globe(pointsData=[{"lat":20.59,"lng":78.96}],
-        labelsData=[{"lat":20.59,"lng":78.96,"text":"India"}])
 st.success("🌳 Plant trees, reduce CO₂")
 st.success("🚶 Walk more, avoid vehicles")
 st.success("💡 Save electricity")

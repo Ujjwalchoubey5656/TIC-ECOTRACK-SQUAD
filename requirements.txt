@@ -4,4 +4,4 @@ matplotlib
 datetime 
 os
 streamlit_lottie
-streamlit_globe
+

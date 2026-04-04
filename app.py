@@ -276,8 +276,9 @@ if row["level"] == "High":
 - Reports: Pollution alerts, migration disruptions
 """)
 elif row["level"] == "Medium":
-st.warning(f"⚠️ {state} Medium Emission")
-st.markdown("""
+    
+    st.warning(f"⚠️ {state} Medium Emission")
+    st.markdown("""
 *Risks:* 
 - Humans: Moderate pollution, asthma  
 - Wildlife: Migration disruption  
@@ -285,8 +286,8 @@ st.markdown("""
 - Reports: Localized air pollution
 """)
 else:
-st.success(f"✅ {state} Low Emission")
-st.markdown("""
+    st.success(f"✅ {state} Low Emission")
+    st.markdown("""
 *Risks:* 
 - Humans: Lower health risk  
 - Wildlife: Safer habitats  
@@ -298,8 +299,8 @@ st.markdown("""
 
 #---------- ECO PRODUCTS ----------
 if menu == "Eco Products":
-banner("https://images.unsplash.com/photo-1469474968028-56623f02e42e")
-st.title("🌱 Eco Products & Carbon Reduction")
+    banner("https://images.unsplash.com/photo-1469474968028-56623f02e42e")
+    st.title("🌱 Eco Products & Carbon Reduction")
 
 product = st.selectbox(
     "Choose Product",

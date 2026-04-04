@@ -122,15 +122,16 @@ if "user" in st.session_state and menu == "Login":
 
 #---------------CO2 CALCULATION--------------
 co2 = 0
-    if transport == "Car":
-        co2 += distance * 0.21
-    elif transport == "Bus":
-        co2 += distance * 0.1
-    else:
-        co2 += distance * 0.05
-    co2 += electricity * 0.5
-    co2 += 2 if food == "Non-Veg" else 1
-    st.subheader(f"🌍 CO₂ Emission: {co2:.2f} kg/day")
+if transport == "Car":
+    
+    co2 += distance * 0.21
+elif transport == "Bus":
+     co2 += distance * 0.1
+else:
+    co2 += distance * 0.05
+co2 += electricity * 0.5
+co2 += 2 if food == "Non-Veg" else 1
+st.subheader(f"🌍 CO₂ Emission: {co2:.2f} kg/day")
 
 #-----------SAVE DATA-----------
 if st.button("Save Data"):

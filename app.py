@@ -135,14 +135,14 @@ st.subheader(f"🌍 CO₂ Emission: {co2:.2f} kg/day")
 
 #-----------SAVE DATA-----------
 if st.button("Save Data"):
-user = st.session_state["user"]
-new_data = pd.DataFrame([{"user": user, "co2": co2}])
+     user = st.session_state["user"]
+     new_data = pd.DataFrame([{"user": user, "co2": co2}])
 if os.path.exists("data.csv"):
-old = pd.read_csv("data.csv")
-df = pd.concat([old, new_data])
+     old = pd.read_csv("data.csv")
+     df = pd.concat([old, new_data])
 else:
-df = new_data
-df.to_csv("data.csv", index=False)
+     df = new_data
+     df.to_csv("data.csv", index=False)
 
 #---add sql save---
 insert_record(user, co2)

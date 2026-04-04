@@ -279,7 +279,7 @@ else:
 
 
 
----------- ECO PRODUCTS ----------
+#---------- ECO PRODUCTS ----------
 if menu == "Eco Products":
     banner("https://images.unsplash.com/photo-1469474968028-56623f02e42e")
     st.title("🌱 Eco Products & Carbon Reduction")

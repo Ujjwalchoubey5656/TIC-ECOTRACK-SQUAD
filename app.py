@@ -250,14 +250,15 @@ df = pd.DataFrame(data)
 st.map(df.rename(columns={"lat":"latitude","lon":"longitude"}))
 
 def level_color(level):
-if level == "High":
-return "🔴"
+    if level == "High":
+        
+     return "🔴"
 elif level == "Medium":
-return "🟠"
+     return "🟠"
 elif level == "Low":
-return "🟢"
+     return "🟢"
 else:
-return "🟡"  # Very Low
+     return "🟡"  # Very Low
 
 df["Level"] = df["level"].apply(level_color)
 st.dataframe(df[["State","CO2","Level"]])
@@ -266,8 +267,9 @@ state = st.selectbox("Select State", df["State"])
 row = df[df["State"] == state].iloc[0]
 
 if row["level"] == "High":
-st.error(f"🚨 {state} HIGH EMISSION")
-st.markdown("""
+    
+    st.error(f"🚨 {state} HIGH EMISSION")
+    st.markdown("""
 *Risks:* 
 - Humans: High respiratory & cardiovascular risk  
 - Wildlife: Habitat loss & stress  

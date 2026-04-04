@@ -332,27 +332,14 @@ df_problems = pd.DataFrame(problems_data)
             st.success(f"🌿 Environment: {row['Impact']}")
         elif row["Category"] == "Economy":
             st.markdown(f"💰 Economy: {row['Impact']}")
+             st.markdown("""
+    *Takeaway:*  
+    Every kg of CO₂ saved improves health, protects wildlife, and stabilizes climate.  
+    🌱 Reduce, Reuse, Recycle, and Switch to Eco-friendly products!
+    """)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# ---------- FOOTER ----------
+st.write("🌿 EcoTrack AI | Final Version 🚀")
 
 
 

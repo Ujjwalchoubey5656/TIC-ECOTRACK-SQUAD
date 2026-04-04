@@ -113,11 +113,10 @@ if "user" in st.session_state and menu == "Login":
         
     with col2:
         st_lottie(lottie_hand, height=150)
-        
-distance = st.number_input("Distance (km)", min_value=0.0)
-transport = st.selectbox("Transport", ["Car", "Bus", "Bike"])
-electricity = st.number_input("Electricity units", min_value=0.0)
-food = st.selectbox("Food", ["Veg", "Non-Veg"])
+        distance = st.number_input("Distance (km)", min_value=0.0)
+        transport = st.selectbox("Transport", ["Car", "Bus", "Bike"])
+        electricity = st.number_input("Electricity units", min_value=0.0)
+        food = st.selectbox("Food", ["Veg", "Non-Veg"])
 
 #---------------CO2 CALCULATION--------------
 co2 = 0

@@ -143,6 +143,23 @@ if st.button("Save Data"):
         df = pd.read_csv("data.csv")
         user_data = df[df["user"] == st.session_state["user"]]
         st.line_chart(user_data["co2"]) 
+
+# ---------- SOLUTION ----------
+if menu == "Solution":
+    banner("https://images.unsplash.com/photo-1470770841072-f978cf4d019e")
+    st.title("🌍 Eco Solutions & Impact")
+    carbon_problems()
+    st.info("Without action, carbon emissions can cause:")
+    st.markdown("""
+    - Heatwaves & droughts 🌞
+    - Flooding & storms 🌊
+    - Species extinction 🐦🐘
+    """)
+    streamlit_globe(pointsData=[{"lat":20.59,"lng":78.96}],
+                    labelsData=[{"lat":20.59,"lng":78.96,"text":"India"}])
+    st.success("🌳 Plant trees, reduce CO₂")
+    st.success("🚶 Walk more, avoid vehicles")
+    st.success("💡 Save electricity")
     
 
 

@@ -105,43 +105,6 @@ if menu == "Login":
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # ---------- HOME AFTER LOGIN ----------
 if "user" in st.session_state and menu == "Login":
     st.write(f"👤 Logged in as: {st.session_state['user']}")

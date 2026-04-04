@@ -154,7 +154,7 @@ st.subheader("📊 Dashboard")
 
 if os.path.exists("data.csv"):
     df = pd.read_csv("data.csv")
-user_data = df[df["user"] == st.session_state["user"]]
+    user_data = df[df["user"] == st.session_state["user"]]
     if not user_data.empty:
         st.line_chart(user_data["co2"])
     else:  

@@ -160,6 +160,17 @@ if menu == "Solution":
     st.success("🌳 Plant trees, reduce CO₂")
     st.success("🚶 Walk more, avoid vehicles")
     st.success("💡 Save electricity")
+
+--------- NAGAR NIGAM ----------
+if menu == "Nagar Nigam":
+    banner("https://images.unsplash.com/photo-1503387762-592deb58ef4e")
+    st.title("🏢 Nagar Nigam & Carbon Threats")
+    carbon_problems()
+    st.success("📞 Contact: +91 9876543210")
+    st.success("🚨 Emergency: 112")
+    issue = st.text_area("Report Issue")
+    if st.button("Submit"):
+        st.success("Complaint submitted!")
     
 
 

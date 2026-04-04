@@ -92,7 +92,7 @@ if menu == "Login":
 
     username = st.text_input("Username")
     password = st.text_input("Password", type="password")
-    if st.button("Login"):
+if st.button("Login"):
         if os.path.exists("users.csv"):
             df = pd.read_csv("users.csv")
             if ((df["username"] == username) & (df["password"] == password)).any():
@@ -135,79 +135,79 @@ st.subheader(f"🌍 CO₂ Emission: {co2:.2f} kg/day")
 
 #-----------SAVE DATA-----------
 if st.button("Save Data"):
-        user = st.session_state["user"]
-        new_data = pd.DataFrame([{"user": user, "co2": co2}])
-        if os.path.exists("data.csv"):
-            old = pd.read_csv("data.csv")
-            df = pd.concat([old, new_data])
-        else:
-            df = new_data
-        df.to_csv("data.csv", index=False)
+user = st.session_state["user"]
+new_data = pd.DataFrame([{"user": user, "co2": co2}])
+if os.path.exists("data.csv"):
+old = pd.read_csv("data.csv")
+df = pd.concat([old, new_data])
+else:
+df = new_data
+df.to_csv("data.csv", index=False)
 
-        #---add sql save---
-        insert_record(user, co2)
-        st.success("Saved!")
+#---add sql save---
+insert_record(user, co2)
+st.success("Saved!")
 
 
-    #------------DASHBOARD--------
-    st.subheader("📊 Dashboard")
+#------------DASHBOARD--------
+st.subheader("📊 Dashboard")
 
-    if os.path.exists("data.csv"):
-        df = pd.read_csv("data.csv")
-        user_data = df[df["user"] == st.session_state["user"]]
-        
-        if not user_data.empty:
-            st.line_chart(user_data["co2"])
-        else:
-            st.info("No data yet")
-    else:
-        st.info("No data file found")
-    #----sql dashboard----
-    st.subheader("📊 Advanced SQL History")
+if os.path.exists("data.csv"):
+df = pd.read_csv("data.csv")
+user_data = df[df["user"] == st.session_state["user"]]
 
-    sql_data = fetch_records(st.session_state["user"])
+if not user_data.empty:
+st.line_chart(user_data["co2"])
+else:
+st.info("No data yet")
+else:
+st.info("No data file found")
+#----sql dashboard----
+st.subheader("📊 Advanced SQL History")
 
-    if sql_data:
-        df_sql = pd.DataFrame(sql_data, columns=["CO2", "Time"])
-        st.dataframe(df_sql)
-    else:
-        st.info("No SQL data yet")
+sql_data = fetch_records(st.session_state["user"])
+
+if sql_data:
+df_sql = pd.DataFrame(sql_data, columns=["CO2", "Time"])
+st.dataframe(df_sql)
+else:
+st.info("No SQL data yet")
 
 
 # ---------- SOLUTION ----------
 if menu == "Solution":
-    banner("https://images.unsplash.com/photo-1470770841072-f978cf4d019e")
-    st.title("🌍 Eco Solutions & Impact")
-    carbon_problems()
-    st.info("Without action, carbon emissions can cause:")
-    st.markdown("""
-    - Heatwaves & droughts 🌞
-    - Flooding & storms 🌊
-    - Species extinction 🐦🐘
-    """)
-    streamlit_globe(pointsData=[{"lat":20.59,"lng":78.96}],
-                    labelsData=[{"lat":20.59,"lng":78.96,"text":"India"}])
-    st.success("🌳 Plant trees, reduce CO₂")
-    st.success("🚶 Walk more, avoid vehicles")
-    st.success("💡 Save electricity")
+banner("https://images.unsplash.com/photo-1470770841072-f978cf4d019e")
+st.title("🌍 Eco Solutions & Impact")
+carbon_problems()
+st.info("Without action, carbon emissions can cause:")
+st.markdown("""
+- Heatwaves & droughts 🌞
+- Flooding & storms 🌊
+- Species extinction 🐦🐘
+""")
+streamlit_globe(pointsData=[{"lat":20.59,"lng":78.96}],
+        labelsData=[{"lat":20.59,"lng":78.96,"text":"India"}])
+st.success("🌳 Plant trees, reduce CO₂")
+st.success("🚶 Walk more, avoid vehicles")
+st.success("💡 Save electricity")
 
 #--------- NAGAR NIGAM ----------
 if menu == "Nagar Nigam":
-    banner("https://images.unsplash.com/photo-1503387762-592deb58ef4e")
-    st.title("🏢 Nagar Nigam & Carbon Threats")
-    carbon_problems()
-    st.success("📞 Contact: +91 9876543210")
-    st.success("🚨 Emergency: 112")
-    issue = st.text_area("Report Issue")
-    if st.button("Submit"):
-        st.success("Complaint submitted!")
-    
+banner("https://images.unsplash.com/photo-1503387762-592deb58ef4e")
+st.title("🏢 Nagar Nigam & Carbon Threats")
+carbon_problems()
+st.success("📞 Contact: +91 9876543210")
+st.success("🚨 Emergency: 112")
+issue = st.text_area("Report Issue")
+if st.button("Submit"):
+st.success("Complaint submitted!")
+
 #---------- LOCATION ----------
 if menu == "Location":
-    st.title("📍 India Carbon Map & Risks")
-    carbon_problems()
+st.title("📍 India Carbon Map & Risks")
+carbon_problems()
 
-    data = [
+data = [
 {"State":"Maharashtra","CO2":18,"lat":19.07,"lon":72.87,"level":"High"},
 {"State":"Delhi","CO2":15,"lat":28.70,"lon":77.10,"level":"High"},
 {"State":"Gujarat","CO2":14,"lat":22.25,"lon":71.19,"level":"High"},
@@ -250,14 +250,14 @@ df = pd.DataFrame(data)
 st.map(df.rename(columns={"lat":"latitude","lon":"longitude"}))
 
 def level_color(level):
-    if level == "High":
-        return "🔴"
-    elif level == "Medium":
-        return "🟠"
-    elif level == "Low":
-        return "🟢"
-    else:
-        return "🟡"  # Very Low
+if level == "High":
+return "🔴"
+elif level == "Medium":
+return "🟠"
+elif level == "Low":
+return "🟢"
+else:
+return "🟡"  # Very Low
 
 df["Level"] = df["level"].apply(level_color)
 st.dataframe(df[["State","CO2","Level"]])
@@ -266,104 +266,104 @@ state = st.selectbox("Select State", df["State"])
 row = df[df["State"] == state].iloc[0]
 
 if row["level"] == "High":
-    st.error(f"🚨 {state} HIGH EMISSION")
-    st.markdown("""
-    *Risks:* 
-    - Humans: High respiratory & cardiovascular risk  
-    - Wildlife: Habitat loss & stress  
-    - Climate: Extreme weather events  
-    - Reports: Pollution alerts, migration disruptions
-    """)
+st.error(f"🚨 {state} HIGH EMISSION")
+st.markdown("""
+*Risks:* 
+- Humans: High respiratory & cardiovascular risk  
+- Wildlife: Habitat loss & stress  
+- Climate: Extreme weather events  
+- Reports: Pollution alerts, migration disruptions
+""")
 elif row["level"] == "Medium":
-    st.warning(f"⚠️ {state} Medium Emission")
-    st.markdown("""
-    *Risks:* 
-    - Humans: Moderate pollution, asthma  
-    - Wildlife: Migration disruption  
-    - Climate: Rising temperature  
-    - Reports: Localized air pollution
-    """)
+st.warning(f"⚠️ {state} Medium Emission")
+st.markdown("""
+*Risks:* 
+- Humans: Moderate pollution, asthma  
+- Wildlife: Migration disruption  
+- Climate: Rising temperature  
+- Reports: Localized air pollution
+""")
 else:
-    st.success(f"✅ {state} Low Emission")
-    st.markdown("""
-    *Risks:* 
-    - Humans: Lower health risk  
-    - Wildlife: Safer habitats  
-    - Climate: Stable conditions  
-    - Reports: Normal air quality
-    """)
+st.success(f"✅ {state} Low Emission")
+st.markdown("""
+*Risks:* 
+- Humans: Lower health risk  
+- Wildlife: Safer habitats  
+- Climate: Stable conditions  
+- Reports: Normal air quality
+""")
 
 
 
 #---------- ECO PRODUCTS ----------
 if menu == "Eco Products":
-    banner("https://images.unsplash.com/photo-1469474968028-56623f02e42e")
-    st.title("🌱 Eco Products & Carbon Reduction")
-    
-    product = st.selectbox(
-        "Choose Product",
-        ["Toothbrush", "Water Bottle", "Shopping Bag", "Cleaning Product", "Straws"]
-    )
-    col1, col2 = st.columns(2)
-    if product == "Toothbrush":
-        with col1: st.error("❌ Plastic")
-        with col2: st.success("✅ Bamboo")
-        st.metric("Carbon Saving", "80%")
-    elif product == "Water Bottle":
-        with col1: st.error("❌ Plastic")
-        with col2: st.success("✅ Steel")
-        st.metric("Carbon Saving", "90%")
-    elif product == "Shopping Bag":
-        with col1: st.error("❌ Plastic")
-        with col2: st.success("✅ Cloth")
-        st.metric("Carbon Saving", "85%")
-    elif product == "Cleaning Product":
-        with col1: st.error("❌ Chemical")
-        with col2: st.success("✅ Eco")
-        st.metric("Carbon Saving", "70%")
-    elif product == "Straws":
-        with col1: st.error("❌ Plastic")
-        with col2: st.success("✅ Steel")
-        st.metric("Carbon Saving", "95%")
- st.markdown("""
-    *Why it matters:*  
-    Reducing plastic & chemical usage prevents:
-    - Pollution of rivers & oceans 🐠  
-    - CO₂ release from manufacturing 🏭  
-    - Wildlife ingestion of plastic 🐦  
-    - Climate & health improvements
-    """)
+banner("https://images.unsplash.com/photo-1469474968028-56623f02e42e")
+st.title("🌱 Eco Products & Carbon Reduction")
+
+product = st.selectbox(
+    "Choose Product",
+    ["Toothbrush", "Water Bottle", "Shopping Bag", "Cleaning Product", "Straws"]
+)
+col1, col2 = st.columns(2)
+if product == "Toothbrush":
+    with col1: st.error("❌ Plastic")
+    with col2: st.success("✅ Bamboo")
+    st.metric("Carbon Saving", "80%")
+elif product == "Water Bottle":
+    with col1: st.error("❌ Plastic")
+    with col2: st.success("✅ Steel")
+    st.metric("Carbon Saving", "90%")
+elif product == "Shopping Bag":
+    with col1: st.error("❌ Plastic")
+    with col2: st.success("✅ Cloth")
+    st.metric("Carbon Saving", "85%")
+elif product == "Cleaning Product":
+    with col1: st.error("❌ Chemical")
+    with col2: st.success("✅ Eco")
+    st.metric("Carbon Saving", "70%")
+elif product == "Straws":
+    with col1: st.error("❌ Plastic")
+    with col2: st.success("✅ Steel")
+    st.metric("Carbon Saving", "95%")
+st.markdown("""
+*Why it matters:*  
+Reducing plastic & chemical usage prevents:
+- Pollution of rivers & oceans 🐠  
+- CO₂ release from manufacturing 🏭  
+- Wildlife ingestion of plastic 🐦  
+- Climate & health improvements
+""")
 # ---------- PROBLEMS ----------
 if menu == "Problems":
-    st.title("⚠️ Carbon Emission Problems & Life Impact")
-    banner("https://images.unsplash.com/photo-1506744038136-46273834b3fb")
-    st.markdown("""
-    Carbon emissions affect every aspect of life. Understanding these problems helps us take action.
-    """)
+st.title("⚠️ Carbon Emission Problems & Life Impact")
+banner("https://images.unsplash.com/photo-1506744038136-46273834b3fb")
+st.markdown("""
+Carbon emissions affect every aspect of life. Understanding these problems helps us take action.
+""")
 problems_data = [
-        {"Category": "Humans", 
-         "Impact": "Respiratory issues, asthma, cardiovascular diseases, heat stress, premature deaths"},
-        {"Category": "Animals & Birds", 
-         "Impact": "Habitat loss, food scarcity, migration disruption, population decline, extinction"},
-        {"Category": "Climate", 
-         "Impact": "Global warming, heatwaves, droughts, floods, extreme weather events"},
-        {"Category": "Environment", 
-         "Impact": "Air & water pollution, melting glaciers, loss of biodiversity, soil degradation"},
-        {"Category": "Economy", 
-         "Impact": "Crop loss, energy costs, disaster damages, healthcare burden"}
-    ]
+    {"Category": "Humans", 
+     "Impact": "Respiratory issues, asthma, cardiovascular diseases, heat stress, premature deaths"},
+    {"Category": "Animals & Birds", 
+     "Impact": "Habitat loss, food scarcity, migration disruption, population decline, extinction"},
+    {"Category": "Climate", 
+     "Impact": "Global warming, heatwaves, droughts, floods, extreme weather events"},
+    {"Category": "Environment", 
+     "Impact": "Air & water pollution, melting glaciers, loss of biodiversity, soil degradation"},
+    {"Category": "Economy", 
+     "Impact": "Crop loss, energy costs, disaster damages, healthcare burden"}
+]
 df_problems = pd.DataFrame(problems_data)
 st.dataframe(df_problems, use_container_width=True)
 
 for row in problems_data:
-    if row["Category"] == "Humans":
-        st.error(f"👤 Humans: {row['Impact']}")
-    elif row["Category"] == "Animals & Birds":
-        st.warning(f"🐦 Wildlife: {row['Impact']}")
-    elif row["Category"] == "Climate":
-        st.info(f"🌡 Climate: {row['Impact']}")
-    elif row["Category"] == "Environment":
-        st.success(f"🌿 Environment: {row['Impact']}")
+if row["Category"] == "Humans":
+    st.error(f"👤 Humans: {row['Impact']}")
+elif row["Category"] == "Animals & Birds":
+    st.warning(f"🐦 Wildlife: {row['Impact']}")
+elif row["Category"] == "Climate":
+    st.info(f"🌡 Climate: {row['Impact']}")
+elif row["Category"] == "Environment":
+    st.success(f"🌿 Environment: {row['Impact']}")
     elif row["Category"] == "Economy":
         st.markdown(f"💰 Economy: {row['Impact']}")
         

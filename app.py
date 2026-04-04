@@ -62,7 +62,44 @@ if menu == "Signup":
             )
             df.to_csv("users.csv", index=False)
             st.success("Account created!")
+# ---------- LOGIN ----------
+if menu == "Login":
+    bg_image_url = "https://images.unsplash.com/photo-1532619187601-3c81b7d3e1d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
+    st.markdown(
+        f"""
+        <div style="
+            background-image: url('{bg_image_url}');
+            background-size: cover;
+            background-position: center;
+            padding: 100px;
+            border-radius: 10px;
+            position: relative;
+        ">
+            <div style="
+                background-color: rgba(0,0,0,0.6);
+                padding: 40px;
+                border-radius: 10px;
+            ">
+                <h1 style='text-align:center; color:white;'>🌿Track carbon, Track control , Save the future ,</h1>
+                <p style='text-align:center; color:white; font-size:18px;'>
+                    Carbon emissions affect humans, birds, and our planet. Login to track your impact.
+                </p>
+        """,
+        unsafe_allow_html=True
+    )
 
+    username = st.text_input("Username")
+    password = st.text_input("Password", type="password")
+    if st.button("Login"):
+        if os.path.exists("users.csv"):
+            df = pd.read_csv("users.csv")
+            if ((df["username"] == username) & (df["password"] == password)).any():
+                st.session_state["user"] = username
+                st.success(f"Welcome {username} 🎉")
+            else:
+                st.error("Invalid login")
+
+    st.markdown("</div></div>", unsafe_allow_html=True)
 
 
 

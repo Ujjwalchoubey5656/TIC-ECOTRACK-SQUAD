@@ -311,6 +311,18 @@ if menu == "Problems":
     st.markdown("""
     Carbon emissions affect every aspect of life. Understanding these problems helps us take action.
     """)
+problems_data = [
+        {"Category": "Humans", 
+         "Impact": "Respiratory issues, asthma, cardiovascular diseases, heat stress, premature deaths"},
+        {"Category": "Animals & Birds", 
+         "Impact": "Habitat loss, food scarcity, migration disruption, population decline, extinction"},
+        {"Category": "Climate", 
+         "Impact": "Global warming, heatwaves, droughts, floods, extreme weather events"},
+        {"Category": "Environment", 
+         "Impact": "Air & water pollution, melting glaciers, loss of biodiversity, soil degradation"},
+        {"Category": "Economy", 
+         "Impact": "Crop loss, energy costs, disaster damages, healthcare burden"}
+    ]
 
 
 

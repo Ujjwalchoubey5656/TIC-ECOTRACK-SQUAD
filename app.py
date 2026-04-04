@@ -158,8 +158,8 @@ user_data = df[df["user"] == st.session_state["user"]]
 
 if not user_data.empty:
     st.line_chart(user_data["co2"])
-else:
-    st.info("No data yet")
+    else:
+         st.info("No data yet")
 else:
     st.info("No data file found")
 #----sql dashboard----

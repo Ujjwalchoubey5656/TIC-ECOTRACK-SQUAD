@@ -105,45 +105,6 @@ def carbon_problems():
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # ---------- HOME AFTER LOGIN ----------
 if "user" in st.session_state and menu == "Login":
     st.write(f"👤 Logged in as: {st.session_state['user']}")
@@ -185,34 +146,7 @@ if st.button("Save Data"):
         user_data = df[df["user"] == st.session_state["user"]]
         st.line_chart(user_data["co2"]) 
 
-# ---------- SOLUTION ----------
-if menu == "Solution":
-    banner("https://images.unsplash.com/photo-1470770841072-f978cf4d019e")
-    st.title("🌍 Eco Solutions & Impact")
-    carbon_problems()
-    st.info("Without action, carbon emissions can cause:")
-    st.markdown("""
-    - Heatwaves & droughts 🌞
-    - Flooding & storms 🌊
-    - Species extinction 🐦🐘
-    """)
-    streamlit_globe(pointsData=[{"lat":20.59,"lng":78.96}],
-                    labelsData=[{"lat":20.59,"lng":78.96,"text":"India"}])
-    st.success("🌳 Plant trees, reduce CO₂")
-    st.success("🚶 Walk more, avoid vehicles")
-    st.success("💡 Save electricity")
 
---------- NAGAR NIGAM ----------
-if menu == "Nagar Nigam":
-    banner("https://images.unsplash.com/photo-1503387762-592deb58ef4e")
-    st.title("🏢 Nagar Nigam & Carbon Threats")
-    carbon_problems()
-    st.success("📞 Contact: +91 9876543210")
-    st.success("🚨 Emergency: 112")
-    issue = st.text_area("Report Issue")
-    if st.button("Submit"):
-        st.success("Complaint submitted!")
-    
 
 
 

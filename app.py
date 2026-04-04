@@ -361,4 +361,10 @@ if menu == "Eco Products":
     elif product == "Water Bottle":
         with col1: st.error("❌ Plastic")
         with col2: st.success("✅ Steel")
+        st.metric("Carbon Saving", "90%")
+    elif product == "Shopping Bag":
+        with col1: st.error("❌ Plastic")
+        with col2: st.success("✅ Cloth")
+        st.metric("Carbon Saving", "85%")
+    elif product == "Cleaning Product":
 

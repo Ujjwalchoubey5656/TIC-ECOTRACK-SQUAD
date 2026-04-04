@@ -120,27 +120,22 @@ if "user" in st.session_state and menu == "Login":
             st_lottie(lottie_hand, height=150)
 
     # ---- Inputs ----
-    distance = st.number_input(
-        "Distance (km)", 
-        min_value=0.0, 
-        value=0.0
-    )
+if "user" in st.session_state and menu == "Login":
 
-    transport = st.selectbox(
-        "Transport", 
-        ["Car", "Bus", "Bike"]
-    )
+    # inputs...
 
-    electricity = st.number_input(
-        "Electricity units", 
-        min_value=0.0, 
-        value=0.0
-    )
+    co2 = 0
+    if transport == "Car":
+        co2 += distance * 0.21
+    elif transport == "Bus":
+        co2 += distance * 0.1
+    else:
+        co2 += distance * 0.05
 
-    food = st.selectbox(
-        "Food", 
-        ["Veg", "Non-Veg"]
-    )
+    co2 += electricity * 0.5
+    co2 += 2 if food == "Non-Veg" else 1
+
+    st.subheader(f"🌍 CO₂ Emission: {co2:.2f} kg/day")
 #---------------CO2 CALCULATION--------------
 co2 = 0
 if transport == "Car":

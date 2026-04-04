@@ -123,7 +123,7 @@ co2 = 0
 if transport == "Car":
     co2 += distance * 0.21
 elif transport == "Bus":
-     co2 += distance * 0.1
+    co2 += distance * 0.1
 else:
     co2 += distance * 0.05
 co2 += electricity * 0.5

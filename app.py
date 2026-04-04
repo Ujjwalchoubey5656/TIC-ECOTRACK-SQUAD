@@ -120,6 +120,7 @@ if "user" in st.session_state and menu == "Login":
 
 #---------------CO2 CALCULATION--------------
 co2 = 0
+
 if transport == "Car":
     co2 += distance * 0.21
 elif transport == "Bus":

@@ -1,3 +1,5 @@
+from database_sql import create_table, insert_record, fetch_records
+create_table()
 import streamlit as st
 import pandas as pd
 import os
@@ -140,6 +142,9 @@ if st.button("Save Data"):
         else:
             df = new_data
         df.to_csv("data.csv", index=False)
+
+        #---add sql save---
+        insert_record(user, co2)
         st.success("Saved!")
 
 
@@ -156,6 +161,16 @@ if st.button("Save Data"):
             st.info("No data yet")
     else:
         st.info("No data file found")
+    #----sql dashboard----
+    st.subheader("📊 Advanced SQL History")
+
+    sql_data = fetch_records(st.session_state["user"])
+
+    if sql_data:
+        df_sql = pd.DataFrame(sql_data, columns=["CO2", "Time"])
+        st.dataframe(df_sql)
+    else:
+        st.info("No SQL data yet")
 
 
 # ---------- SOLUTION ----------
@@ -350,6 +365,7 @@ for row in problems_data:
         st.success(f"🌿 Environment: {row['Impact']}")
     elif row["Category"] == "Economy":
         st.markdown(f"💰 Economy: {row['Impact']}")
+        
 st.markdown("""
 *Takeaway:*  
 Every kg of CO₂ saved improves health, protects wildlife, and stabilizes climate.  

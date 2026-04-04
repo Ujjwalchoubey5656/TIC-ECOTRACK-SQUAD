@@ -12,8 +12,34 @@ def load_lottie(url):
     return r.json()
 lottie_hand = load_lottie("https://assets2.lottiefiles.com/packages/lf20_jcikwtux.json")
 
+st.sidebar.title("🌱 EcoTrack AI")
+st.sidebar.image(
+    "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
+    use_container_width=True
+)
+tips = ["🌳 Plant Trees", "🚲 Use Cycle", "💡 Save Electricity", "🚍 Use Public Transport"]
+st.sidebar.success(random.choice(tips))
+st.sidebar.info("Reduce CO₂ 🌍")
+st.sidebar.warning("Save Earth ♻️")
 
+menu = st.sidebar.selectbox(
+    "Menu",
+    ["Login", "Signup", "Solution", "Nagar Nigam", "Location",  "Eco Products", "Problems"]
+)
+# ---------- BACKGROUND IMAGE ----------
+def banner(img):
+    st.image(img, use_container_width=True)
+    st.markdown("##")
 
+# ---------- COMMON PROBLEMS FUNCTION ----------
+def carbon_problems():
+    st.subheader("⚠️ Carbon Emission Problems")
+    st.markdown("""
+    *Humans:* Respiratory issues, asthma, cardiovascular diseases, heat stress  
+    *Animals & Birds:* Habitat loss, food scarcity, migration disruption, population decline  
+    *Climate:* Global warming, heatwaves, droughts, floods, extreme weather events  
+    *Environment:* Air & water pollution, melting glaciers, loss of biodiversity
+    """)
 
 
 

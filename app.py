@@ -101,11 +101,6 @@ if menu == "Login":
                 st.error("Invalid login")
 
     st.markdown("</div></div>", unsafe_allow_html=True)
-
-
-
-
-
 # ---------- HOME AFTER LOGIN ----------
 if "user" in st.session_state and menu == "Login":
     st.write(f"👤 Logged in as: {st.session_state['user']}")

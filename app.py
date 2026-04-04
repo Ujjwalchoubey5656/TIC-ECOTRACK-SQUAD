@@ -41,7 +41,27 @@ def carbon_problems():
     *Environment:* Air & water pollution, melting glaciers, loss of biodiversity
     """)
 
-
+# ---------- SIGNUP ----------
+if menu == "Signup":
+    banner("https://images.unsplash.com/photo-1521737604893-d14cc237f11d")
+    st.subheader("Create Account")
+    carbon_problems()
+    new_user = st.text_input("Username")
+    new_pass = st.text_input("Password", type="password")
+    if st.button("Signup"):
+        if os.path.exists("users.csv"):
+            df = pd.read_csv("users.csv")
+        else:
+            df = pd.DataFrame(columns=["username", "password"])
+        if new_user in df["username"].values:
+            st.error("User already exists")
+        else:
+            df = pd.concat(
+                [df, pd.DataFrame([[new_user, new_pass]], columns=["username", "password"])],
+                ignore_index=True,
+            )
+            df.to_csv("users.csv", index=False)
+            st.success("Account created!")
 
 
 

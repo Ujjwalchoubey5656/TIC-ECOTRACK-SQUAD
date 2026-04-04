@@ -251,13 +251,12 @@ st.map(df.rename(columns={"lat":"latitude","lon":"longitude"}))
 
 def level_color(level):
     if level == "High":
-        
      return "🔴"
-elif level == "Medium":
+    elif level == "Medium":
      return "🟠"
-elif level == "Low":
+    elif level == "Low":
      return "🟢"
-else:
+    else:
      return "🟡"  # Very Low
 
 df["Level"] = df["level"].apply(level_color)

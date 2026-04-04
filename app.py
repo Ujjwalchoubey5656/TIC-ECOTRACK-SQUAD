@@ -178,6 +178,44 @@ if menu == "Nagar Nigam":
 if menu == "Location":
     st.title("📍 India Carbon Map & Risks")
     carbon_problems()
+data = [
+        {"State":"Maharashtra","CO2":18,"lat":19.07,"lon":72.87,"level":"High"},
+        {"State":"Delhi","CO2":15,"lat":28.70,"lon":77.10,"level":"High"},
+        {"State":"Gujarat","CO2":14,"lat":22.25,"lon":71.19,"level":"High"},
+        {"State":"Uttar Pradesh","CO2":16,"lat":26.85,"lon":80.94,"level":"High"},
+        {"State":"Tamil Nadu","CO2":14,"lat":11.00,"lon":78.00,"level":"High"},
+        {"State":"West Bengal","CO2":13,"lat":22.57,"lon":88.36,"level":"High"},
+        {"State":"Karnataka","CO2":10,"lat":15.31,"lon":75.12,"level":"Medium"},
+            {"State":"Rajasthan","CO2":11,"lat":27.02,"lon":74.22,"level":"Medium"},
+        {"State":"Andhra Pradesh","CO2":10,"lat":15.91,"lon":79.74,"level":"Medium"},
+        {"State":"Telangana","CO2":10,"lat":17.41,"lon":78.47,"level":"Medium"},
+        {"State":"Madhya Pradesh","CO2":11,"lat":23.30,"lon":77.41,"level":"Medium"},
+        {"State":"Punjab","CO2":10,"lat":30.90,"lon":75.85,"level":"Medium"},
+        {"State":"Haryana","CO2":10,"lat":29.06,"lon":76.08,"level":"Medium"},
+        {"State":"Kerala","CO2":6,"lat":10.85,"lon":76.27,"level":"Low"},
+        {"State":"Bihar","CO2":7,"lat":25.61,"lon":85.13,"level":"Low"},
+        {"State":"Odisha","CO2":11,"lat":20.95,"lon":85.98,"level":"Medium"},
+        {"State":"Chhattisgarh","CO2":10,"lat":21.25,"lon":81.63,"level":"Medium"},
+        {"State":"Assam","CO2":6,"lat":26.20,"lon":92.79,"level":"Low"},
+        {"State":"Himachal Pradesh","CO2":5,"lat":31.10,"lon":77.16,"level":"Low"},
+        {"State":"Uttarakhand","CO2":5,"lat":30.06,"lon":79.10,"level":"Low"},
+        {"State":"Jammu & Kashmir","CO2":4,"lat":33.77,"lon":76.55,"level":"Low"},
+        {"State":"Goa","CO2":4,"lat":15.48,"lon":73.83,"level":"Low"},
+        {"State":"Sikkim","CO2":2,"lat":27.33,"lon":88.62,"level":"Very Low"},
+        {"State":"Tripura","CO2":2,"lat":23.83,"lon":91.28,"level":"Very Low"},
+        {"State":"Manipur","CO2":2,"lat":24.82,"lon":93.95,"level":"Very Low"},
+        {"State":"Nagaland","CO2":2,"lat":26.15,"lon":94.56,"level":"Very Low"},
+        {"State":"Mizoram","CO2":1,"lat":23.16,"lon":92.83,"level":"Very Low"},
+        {"State":"Arunachal Pradesh","CO2":1,"lat":28.21,"lon":94.41,"level":"Very Low"},
+        {"State":"Meghalaya","CO2":2,"lat":25.57,"lon":91.88,"level":"Very Low"},
+        {"State":"Ladakh","CO2":1,"lat":34.15,"lon":77.57,"level":"Very Low"},
+        {"State":"Chandigarh","CO2":5,"lat":30.73,"lon":76.78,"level":"Medium"},
+        {"State":"Puducherry","CO2":2,"lat":11.93,"lon":79.83,"level":"Low"},
+        {"State":"Andaman & Nicobar","CO2":1,"lat":11.67,"lon":92.73,"level":"Very Low"},
+        {"State":"Daman & Diu","CO2":2,"lat":20.42,"lon":72.83,"level":"Low"},
+        {"State":"Lakshadweep","CO2":1,"lat":10.57,"lon":72.64,"level":"Very Low"},
+        {"State":"Jharkhand","CO2":3,"lat":23.33,"lon":85.33,"level":"Low"}
+    ]
 
 
 

@@ -6,6 +6,7 @@ import requests
 import random
 from streamlit_lottie import st_lottie
 from streamlit_globe import streamlit_globe
+# ---------------- CONFIG ----------------
 st.set_page_config(page_title="EcoTrack AI", layout="wide")
 def load_lottie(url):
     r = requests.get(url)
